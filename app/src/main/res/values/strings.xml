@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Bingo_V2</string>
+    <string name="mode_select">模式選擇</string>
+    <string name="game_mode">遊戲</string>
+    <string name="input_mode">輸入</string>
+    <string name="input_select">輸入模式</string>
+    <string name="input_num">請輸入數字</string>
+    <string name="random_btn">亂數</string>
+    <string name="win_text">贏了!!</string>
+    <string name="play_again">再玩一次</string>
+    <string name="bingo_row_count_label">宮格數</string>
+    <string name="input_bingo_count">請輸入格子數</string>
+    <string name="start_game">開始遊戲</string>
+    <string name="bingo_count_label">賓果數</string>
+    <string name="edit_bingo_count">請輸入賓果數</string>
+</resources>
