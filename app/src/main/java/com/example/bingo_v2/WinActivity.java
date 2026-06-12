@@ -18,18 +18,25 @@ public class WinActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_win);
 
-        //從 WinActivity 跳轉到 MainActivity
-        Intent intent = new Intent(WinActivity.this, MainActivity.class);
-        //清除堆疊
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        //避免因典籍返回鍵回到 MainActivity
-        finish();
+        findViewById(R.id.playAgainBtn).setOnClickListener(v -> {
+            //從WinActivity跳轉到MainActivity
+            Intent intent = new Intent(WinActivity.this, MainActivity.class);
+            //清除堆疊
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            //避免因典籍返回鍵回到WinActivity
+            finish();
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }

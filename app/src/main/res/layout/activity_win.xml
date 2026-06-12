@@ -5,35 +5,48 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:background="@drawable/star"
     tools:context=".WinActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout1"
+    <ImageView
+        android:id="@+id/winImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/cat"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/input_select"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/winText" />
+
+    <TextView
+        android:id="@+id/winText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/win_text"
+        android:textColor="#1b1506"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/winImage"
+        app:layout_constraintBottom_toTopOf="@id/playAgainBtn"/>
 
-        <TextView
-            android:id="@+id/winText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/win_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/playAgainBtn"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="@string/play_again"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/winText"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/play_again"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/winText"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
